@@ -16,8 +16,13 @@
         <h1>Pig Dice</h1>
         <h5><em>Roll to score points. If you roll a 1 you lose your points from that turn. Say "hold" to hold your points and end your turn.</em></h5>
       </div>
+      <div id="select-mode">
+        <button type="button" name="button" class="btn btn-primary" id="2humans">2 humans</button>
+        <button type="button" name="button" class="btn btn-info" id="vsEasyComputer">vs easy computer</button>
+        <button type="button" name="button" class="btn btn-warning">vs hard computer</button>
+      </div>
 
-      <div class="row">
+      <div class="row" id="humanvshuman">
         <div class="col-md-6">
           <h2>Player 1</h2>
           <button type="button" class="btn btn-success" name="button" id="roll-button1">Roll</button>
@@ -29,6 +34,26 @@
         </div>
         <div class="col-md-6">
           <h2>Player 2</h2>
+          <button type="button" class="btn btn-success" name="button" id="roll-button2">Roll</button>
+          <button type="button" class="btn btn-danger" name="button" id="hold-button2">Hold</button>
+          <hr>
+          <p>Roll Total: <span id="player2roll"></span></p>
+          <p>Turn Total: <span id="player2turntotal"></span></p>
+          <p>Total Score: <span id="player2Total"></span></p>
+        </div>
+      </div>
+      <div class="row" id="humanVsEasyComputer">
+        <div class="col-md-6">
+          <h2>Player 1</h2>
+          <button type="button" class="btn btn-success" name="button" id="roll-button1">Roll</button>
+          <button type="button" class="btn btn-danger" name="button" id="hold-button1">Hold</button>
+          <hr>
+          <p>Roll Total: <span id="player1roll"></span></p>
+          <p>Turn Total: <span id="player1turntotal"></span></p>
+          <p>Total Score: <span id="player1Total"></span></p>
+        </div>
+        <div class="col-md-6">
+          <h2>Easy Computer</h2>
           <button type="button" class="btn btn-success" name="button" id="roll-button2">Roll</button>
           <button type="button" class="btn btn-danger" name="button" id="hold-button2">Hold</button>
           <hr>
