@@ -30,6 +30,14 @@ Player.prototype.hold = function() {
   this.turnScore = 0;
 }
 
+Player.prototype.winner = function() {
+  if (this.totalScore >= 20) {
+    alert("you win");
+
+  } else {
+    return false;
+  }
+}
 
 
 // user interface Logic
@@ -37,18 +45,34 @@ Player.prototype.hold = function() {
 $(document).ready(function() {
   var player1 = new Player();
   var player2 = new Player();
-  $("button#roll-button").click(function(event) {
+  $("button#roll-button1").click(function(event) {
     event.preventDefault();
     player1.throwDice();
     player1.checkRoll();
     $("span#player1roll").text(player1.roll);
     $("span#player1turntotal").text(player1.turnScore);
   });
-  $("button#hold-button").click(function(event) {
+  $("button#hold-button1").click(function(event) {
     event.preventDefault();
     player1.hold();
     $("span#player1Total").text(player1.totalScore);
     $("span#player1turntotal").empty();
-
+    alert("your turn is over. Player 2's turn");
+    player1.winner();
+  });
+  $("button#roll-button2").click(function(event) {
+    event.preventDefault();
+    player2.throwDice();
+    player2.checkRoll();
+    $("span#player2roll").text(player2.roll);
+    $("span#player2turntotal").text(player2.turnScore);
+  });
+  $("button#hold-button2").click(function(event) {
+    event.preventDefault();
+    player2.hold();
+    $("span#player2Total").text(player2.totalScore);
+    $("span#player2turntotal").empty();
+    alert("your turn is over. Player 1's turn");
+    player2.winner();
   });
 });
