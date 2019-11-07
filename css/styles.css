@@ -1,3 +1,6 @@
-#humanvshuman, #humanVsEasyComputer {
+#humanvshuman, #humanVsEasyComputer, #humanVsHardComputer {
   display: none;
+}
+h1, .col-6, .button-group {
+  text-align: center;
 }
